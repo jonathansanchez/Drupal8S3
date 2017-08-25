@@ -46,11 +46,13 @@ class Author
         $this->createdAt = $aDate;
     }
 
-    private function setStatus(Status $anAuthorStatus) {
+    private function setStatus(Status $anAuthorStatus)
+    {
         $this->status = $anAuthorStatus;
     }
 
-    public function deactivate() {
+    public function deactivate()
+    {
         $this->setStatus(
             Status::deactivate()
         );
