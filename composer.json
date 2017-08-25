@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Drupal\\recharge\\": "author/src/"
+            "Drupal\\author\\": "author/src/"
         }
     },
     "autoload-dev": {
