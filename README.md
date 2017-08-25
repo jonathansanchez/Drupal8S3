@@ -1,6 +1,6 @@
 # Drupal 8 Module Amazon S3
 
-This is a simple Drupal 8 module that use Amazon S3. Images uploaded through the typical form (Form API) will be stored on Amazon S3.
+This is a simple Drupal 8 module that use Amazon S3. Images uploaded through the typical form (Form API) will be stored on Amazon S3 (Images will be stored in _/tmp_, so they will be erased.).
 
 This module contains:
 1. Domain Driven Design based on Entity "Author".
