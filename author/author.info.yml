@@ -1,0 +1,7 @@
+name: Author
+description: Example module with the use of Amazon S3.
+package: Custom
+version: 8.x.1
+
+type: module
+core: 8.x
