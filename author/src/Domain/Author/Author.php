@@ -2,6 +2,8 @@
 
 namespace Drupal\author\Domain\Author;
 
+use Drupal\author\Domain\Status\Status;
+
 class Author
 {
     /** @var  AuthorName $name */
