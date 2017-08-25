@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\author\Domain\Author;
+namespace Drupal\author\Domain\Status;
 
 class Status
 {
