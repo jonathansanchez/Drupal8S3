@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * implements hook_schema()
+ */
+ function author_schema() {
+  $schema['author'] = [
+    'description' => 'Stores authors entries for demonstration purposes.',
+    'fields' => [
+      'id'=> [
+        'type'=>'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique author ID.'
+      ],
+      'name'=> [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Name of the author.'
+      ],
+      'filename'=> [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Name of the profile image author.'
+      ]
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'name' => ['name'],
+      'filename' => ['filename']
+    ],
+  ];
+  
+  return $schema;
+}
