@@ -1,0 +1,4 @@
+services:
+  recharge.saveanauthor_service:
+    class: Drupal\author\Application\Services\SaveAnAuthor
+    arguments: ['@author.s3authorrepository']
