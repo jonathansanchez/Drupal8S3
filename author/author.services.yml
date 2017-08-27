@@ -1,4 +1,19 @@
 services:
-  recharge.saveanauthor_service:
+  author.s3_context:
+    class: Drupal\author\Infrastructure\Persistence\S3\S3Factory
+
+  author.s3_factory:
+    class: Drupal\author\Infrastructure\Persistence\S3\S3Factory
+    factory: 'author.s3_context:create'
+
+  author.s3authorrepository:
+    class: Drupal\author\Infrastructure\Persistence\S3\S3AuthorRepository
+    arguments: ['@author.s3_factory']
+
+  author.dbauthorrepository:
+    class: Drupal\author\Infrastructure\Persistence\Database\DatabaseAuthorRepository
+    arguments: ['@database']
+
+  author.saveanauthor_service:
     class: Drupal\author\Application\Services\SaveAnAuthor
-    arguments: ['@author.s3authorrepository']
+    arguments: ['@author.s3authorrepository', '@author.dbauthorrepository']
