@@ -1,0 +1,7 @@
+author.create_author:
+  path: '/author'
+  defaults:
+    _form: '\Drupal\author\Application\Form\CreateAuthorForm'
+    _title: 'Create Author'
+  requirements:
+    _permission: 'access content'
