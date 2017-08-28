@@ -28,4 +28,13 @@ interface AuthorRepository
      * @return Author|null
      */
     public function find(string $authorName);
+
+    /**
+     * Find all authors
+     *
+     * @param none
+     *
+     * @return array|null
+     */
+    public function findAll();
 }
