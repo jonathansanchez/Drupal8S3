@@ -44,4 +44,9 @@ final class S3AuthorRepository implements AuthorRepository
             ->fileSystem
             ->read(self::DIR_S3 . $fileName);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function findAll() { }
 }
