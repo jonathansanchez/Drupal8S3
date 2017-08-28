@@ -17,3 +17,7 @@ services:
   author.saveanauthor_service:
     class: Drupal\author\Application\Services\SaveAnAuthor
     arguments: ['@author.s3authorrepository', '@author.dbauthorrepository']
+
+  author.listauthors_service:
+    class: Drupal\author\Application\Services\ListAuthors
+    arguments: ['@author.dbauthorrepository']
