@@ -1,7 +1,15 @@
 author.create_author:
-  path: '/author'
+  path: '/create-author'
   defaults:
     _form: '\Drupal\author\Application\Form\CreateAuthorForm'
     _title: 'Create Author'
+  requirements:
+    _permission: 'access content'
+
+author.content:
+  path: '/authors'
+  defaults:
+    _controller: '\Drupal\author\Application\Controller\AuthorController::listAll'
+    _title: 'Authors List'
   requirements:
     _permission: 'access content'
