@@ -45,14 +45,27 @@ final class DatabaseAuthorRepository implements AuthorRepository
     /**
      * {@inheritdoc}
      */
-    public function find(string $authorName)
+    public function find(string $fileName)
     {
         return $this
             ->databaseApi
             ->select('author', 'a')
             ->fields('a',  ['id', 'name', 'filename'])
-            ->condition('name', $authorName)
+            ->condition('filename', $fileName)
             ->execute()
             ->fetchAssoc();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function findAll()
+    {
+        return $this
+            ->databaseApi
+            ->select('author', 'a')
+            ->fields('a',  ['id', 'name', 'filename'])
+            ->execute()
+            ->fetchAll();
     }
 }
