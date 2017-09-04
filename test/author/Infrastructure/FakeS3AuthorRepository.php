@@ -4,5 +4,15 @@ namespace Test\author\Infrastructure;
 
 class FakeS3AuthorRepository
 {
-    public function save() { }
+    private $called = false;
+
+    public function save()
+    {
+        $this->called = true;
+    }
+
+    public function saveWasCalled()
+    {
+        return $this->called;
+    }
 }
