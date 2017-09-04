@@ -2,13 +2,13 @@
 
 namespace Drupal\author\Application\Services;
 
-use Drupal\author\Domain\Author\AuthorRepository;
+//use Drupal\author\Domain\Author\AuthorRepository;
 
 class ListAuthors
 {
     private $authorRepository;
 
-    public function __construct(AuthorRepository $authorRepository)
+    public function __construct(/*AuthorRepository */$authorRepository)
     {
         $this->authorRepository = $authorRepository;
     }
