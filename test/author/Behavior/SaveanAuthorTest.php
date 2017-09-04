@@ -14,9 +14,12 @@ class SaveanAuthorTest extends TestCase
      */
     public function tryToSaveAnAuthor()
     {
+        $authorRepository = new FakeDatabaseAuthorRepository();
+        $authorCloud      = new FakeS3AuthorRepository();
+
         $expected = (new SaveAnAuthor(
-            new FakeDatabaseAuthorRepository(),
-            new FakeS3AuthorRepository()
+            $authorRepository,
+            $authorCloud
         ))->execute('Susan', [
             'fid'  => 1,
             'name' => 'image.png',
@@ -24,5 +27,7 @@ class SaveanAuthorTest extends TestCase
         ]);
 
         $this->assertNull($expected);
+        $this->assertTrue($authorRepository->saveWasCalled());
+        $this->assertTrue($authorCloud->saveWasCalled());
     }
 }
